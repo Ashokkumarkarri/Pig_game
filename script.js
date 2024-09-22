@@ -102,3 +102,29 @@ btnHold.addEventListener('click', function () {
 btnNew.addEventListener('click', function () {
   init();
 });
+
+// how to play new code from gpt bro
+
+const howToPlayBtn = document.querySelector('.btn--how-to-play');
+const modal = document.querySelector('.modal');
+const closeBtn = document.querySelector('.close-btn');
+
+// Show modal with animation
+howToPlayBtn.addEventListener('click', function () {
+  modal.classList.add('show');
+  document.querySelector('.modal-content').classList.add('show');
+});
+
+// Close modal when clicking on close button
+closeBtn.addEventListener('click', function () {
+  modal.classList.remove('show');
+  document.querySelector('.modal-content').classList.remove('show');
+});
+
+// Optional: Close modal when clicking outside the modal content
+modal.addEventListener('click', function (e) {
+  if (e.target === modal) {
+    modal.classList.remove('show');
+    document.querySelector('.modal-content').classList.remove('show');
+  }
+});

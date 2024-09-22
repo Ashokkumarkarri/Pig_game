@@ -169,3 +169,204 @@ main {
 .hidden {
   display: none;
 }
+
+/* extra added code chatgpt */
+/* Default styles for large screens (desktop) */
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Media Query for tablets (768px and above) */
+@media (max-width: 1024px) {
+  main {
+    width: 85rem;
+    height: 55rem;
+    flex-direction: column;
+  }
+
+  .player {
+    flex: 100%;
+    padding: 4rem;
+  }
+
+  .dice {
+    top: 30rem;
+  }
+
+  .btn--roll,
+  .btn--hold {
+    top: 50rem;
+  }
+}
+
+/* Media Query for mobile (less than 768px) */
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .player {
+    flex: 100%;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 5rem;
+  }
+
+  .current {
+    width: 80%;
+    padding: 1.5rem;
+  }
+
+  .dice {
+    height: 8rem;
+    top: 35rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .btn--new {
+    top: 2rem;
+  }
+
+  .btn--roll {
+    top: 42rem;
+  }
+
+  .btn--hold {
+    top: 50rem;
+  }
+}
+
+/* Small Mobile Screens (less than 480px) */
+@media (max-width: 480px) {
+  main {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .score {
+    font-size: 4rem;
+  }
+
+  .current {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .dice {
+    height: 7rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .btn--roll,
+  .btn--hold {
+    top: 45rem;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 4rem;
+  border-radius: 1.5rem;
+  width: 60rem; /* Increased width */
+  text-align: center;
+  position: relative;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content.show {
+  transform: scale(1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem; /* Increased padding */
+  right: 2rem;
+  font-size: 3rem; /* Increased font size */
+  cursor: pointer;
+}
+
+/* Larger text and padding for "How to Play" content */
+.modal-content h2 {
+  font-size: 4rem; /* Larger title */
+  margin-bottom: 2rem;
+}
+
+.modal-content p {
+  font-size: 2rem; /* Larger paragraph */
+  margin-bottom: 2rem;
+}
+
+.modal-content ul {
+  list-style: none;
+  font-size: 2rem; /* Larger list items */
+  padding-left: 0;
+}
+
+.modal-content ul li {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
